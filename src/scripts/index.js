@@ -5,7 +5,7 @@ import data from '../DATA.json'
 
 const hamburgerButtonElement = document.querySelector("#hamburger");
 const drawerElement = document.querySelector("#drawer");
-const mainElement = document.querySelector("main");
+const mainElement = document.querySelector("main",".hero");
 const btnExpl = document.querySelector("#katalog");
 
 btnExpl.addEventListener("click", event=>{
