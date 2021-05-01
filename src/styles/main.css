@@ -42,6 +42,10 @@ body {
     color: #212121;
 }
 
+.logo{
+    max-width: 79px;
+}
+
 /*
  * Top level navigation
  */
@@ -50,7 +54,12 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    background-color: pink;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 16px;
+    column-gap: 0;
+    align-items: center;
 }
 
 .nav__list {
@@ -58,6 +67,22 @@ body {
     padding: 0px;
     margin: 0px;
     text-align: right;
+    grid-row-start: 1; /* box2 akan dimulai dari baris garis pertama */
+    grid-row-end: 2; /* dan berakhir di baris garis ketiga */
+    grid-column-start:2 ;
+}
+
+.logo{
+    grid-column-start:1 ;
+    grid-column-end:2;
+    grid-row-end: 2;
+    padding: 10px;
+    text-align: left;
+}
+
+.img-logo{
+    width: auto;
+    height: 32px;
 }
 
 .nav__item {
@@ -93,8 +118,6 @@ body {
     text-align: center;
     background-image: url("hero-image_2.jpg");
     background-position: center;
-    background-color: green;
-    
 }
 
 .hero__inner {
@@ -104,8 +127,9 @@ body {
 
 .hero__title {
     color: #fff;
-    font-weight: 500;
-    font-size: 36px;
+    opacity: 2.0;
+    font-size: 52px;
+    font-family: emoji;
 }
 
 .hero__tagline {
@@ -115,6 +139,12 @@ body {
     font-weight: 300;
 }
 
+.katalog_label{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    padding: 42px;
+}
 
 /*
  * main
@@ -182,6 +212,24 @@ main {
 }
 
 .headline__button:hover {
+    opacity: 0.8;
+}
+
+.btn-explore{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    margin-top: 24px;
+    cursor: pointer;
+    padding: 14px 26px;
+    color: white;
+    border: none;
+    border-radius: 18px;
+    background-color:#ffffff80;
+    transition: opacity 0.3s;
+    text-decoration: auto;
+}
+
+.btn-explore:hover{
     opacity: 0.8;
 }
 
@@ -263,12 +311,27 @@ main {
     color: inherit;
 }
 
-.post-item__description {
+.post-item__description p{
     margin-top: 16px;
     font-size: 14px;
     line-height: 1.5em;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
+p{
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.5em;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
 /*
  * footer
  */
@@ -325,7 +388,9 @@ footer a {
     
    #drawer a {
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+
    }
 
        
@@ -333,7 +398,9 @@ footer a {
     font-size: 32px;
     text-decoration: none;
     color: black;
+    
    }
+
 
 
    
@@ -365,5 +432,11 @@ footer a {
     width: 100%;
     }
 
+    /* .logo{
+        display: none;
+    } */
+    .nav{
+        display: block;
+    }
     
 }
